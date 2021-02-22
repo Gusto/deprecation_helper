@@ -3,7 +3,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = 'deprecation_helper'
-  spec.version       = '0.0.1'
+  spec.version       = '0.1.0'
   spec.authors       = ['Alex Evanczuk']
   spec.email         = ['alex.evanczuk@gusto.com']
 
