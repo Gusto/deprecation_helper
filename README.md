@@ -1,5 +1,7 @@
 # DeprecationHelper
 
+[![Build status](https://badge.buildkite.com/ca0732598feeb90c404e6883a2d79ad32610ff356020f11639.svg?branch=main)](https://buildkite.com/gusto/deprecationhelper)
+
 The purpose of this gem is to help Ruby developers change code safely. It provides a basic framework for deprecating code. Since Ruby is an untyped language, you can't be sure when ceratin types of changes you're trying to make, such as deleting or renaming a method, will break production. This gem is provides an opinionated roadmap for deprecating code.
 
 ## Installation
