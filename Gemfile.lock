@@ -1,0 +1,39 @@
+PATH
+  remote: .
+  specs:
+    deprecation_helper (1.0.0.pre.gusto.pre.pre)
+      sorbet-runtime (~> 0.5.6293)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    diff-lcs (1.4.4)
+    rspec (3.10.0)
+      rspec-core (~> 3.10.0)
+      rspec-expectations (~> 3.10.0)
+      rspec-mocks (~> 3.10.0)
+    rspec-core (3.10.1)
+      rspec-support (~> 3.10.0)
+    rspec-expectations (3.10.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.10.0)
+    rspec-mocks (3.10.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.10.0)
+    rspec-support (3.10.1)
+    sorbet (0.5.6293)
+      sorbet-static (= 0.5.6293)
+    sorbet-runtime (0.5.6293)
+    sorbet-static (0.5.6293-universal-darwin-17)
+
+PLATFORMS
+  ruby
+  x86_64-darwin-17
+
+DEPENDENCIES
+  deprecation_helper!
+  rspec (~> 3.0)
+  sorbet (~> 0.5.6293)
+
+BUNDLED WITH
+   2.2.4
