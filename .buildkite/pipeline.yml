@@ -1,6 +1,6 @@
 steps:
   - name: ':rspec: RSpec'
-    command: bundle exec rspec
+    command: test.sh
     timeout_in_minutes: 10
     env:
       BUILDKITE_DOCKER: 'true'
