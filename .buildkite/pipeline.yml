@@ -11,7 +11,4 @@ steps:
     agents:
       queue: gemstash-publish
     command: gem build deprecation_helper.gemspec && gem push --key gemstash --host https://gemstash.zp-int.com/private *.gem
-    plugins:
-      - docker-compose#v3.5.0:
-          config: '.buildkite/docker-compose.yml'
-          run: 'app'
+
