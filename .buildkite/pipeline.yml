@@ -7,10 +7,6 @@ steps:
       BUILDKITE_DOCKER_FILE: 'Dockerfile.test'
   - wait
   - block: ':rocket: Publish to Gem Server?'
-  - name: ':ruby: Publish'
-    agents:
-      queue: gemstash-publish
-    command: gem build deprecation_helper.gemspec && gem push --key gemstash --host https://gemstash.zp-int.com/private *.gem
   - name: ':ruby: Publish to Rubygems'
     agents:
       queue: gemstash-publish
