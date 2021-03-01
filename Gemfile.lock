@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    deprecation_helper (0.1.0)
+    deprecation_helper (0.1.1)
       sorbet-runtime (~> 0.5.6293)
 
 GEM
@@ -23,7 +23,7 @@ GEM
     rspec-support (3.10.2)
     sorbet (0.5.6294)
       sorbet-static (= 0.5.6294)
-    sorbet-runtime (0.5.6294)
+    sorbet-runtime (0.5.6295)
     sorbet-static (0.5.6294-universal-darwin-14)
 
 PLATFORMS

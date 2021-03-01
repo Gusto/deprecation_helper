@@ -1,3 +1,4 @@
+# typed: false
 RSpec.describe DeprecationHelper do
   describe 'deprecate!' do
     subject { DeprecationHelper.deprecate!(input_parameter) }
