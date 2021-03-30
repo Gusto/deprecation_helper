@@ -2,7 +2,7 @@
 
 module DeprecationHelper
   module Strategies
-    class LogError
+    class LogErrorAndStacktrace
       include BaseStrategyInterface
 
       extend T::Sig
@@ -14,7 +14,7 @@ module DeprecationHelper
 
       sig { override.params(message: String, backtrace: T::Array[String]).void }
       def apply!(message, backtrace) # rubocop:disable Lint/UnusedMethodArgument
-        @logger.warn(message)
+        @logger.warn({ message: message, backtrace: backtrace})
       end
     end
   end

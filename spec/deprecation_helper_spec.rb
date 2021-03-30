@@ -110,6 +110,23 @@ RSpec.describe DeprecationHelper do
       end
     end
 
+    context 'configured to do log both error and stacktrace' do
+      before do
+        DeprecationHelper.configure do |config|
+          config.deprecation_strategies = [DeprecationHelper::Strategies::LogErrorAndStacktrace.new]
+        end
+      end
+
+      context 'logger is not set' do
+        it_behaves_like 'it does not raise an error'
+
+        it 'logs an error' do
+          expect(logger).to receive(:warn).with({ message: 'This thing is deprecated', backtrace: ['frame0', 'frame1', 'frame2', 'some_special_complicated_frame']})
+          subject
+        end
+      end
+    end
+
     context 'configured for multiple purposes' do
       let(:logger) { Logger.new(STDOUT) }
 

@@ -10,6 +10,7 @@ require 'deprecation_helper/strategies/base_strategy_interface'
 require 'deprecation_helper/strategies/error_strategy_interface'
 require 'deprecation_helper/strategies/raise_error'
 require 'deprecation_helper/strategies/log_error'
+require 'deprecation_helper/strategies/log_error_and_stacktrace'
 
 require 'deprecation_helper/deprecation_exception'
 
