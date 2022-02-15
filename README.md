@@ -208,4 +208,4 @@ Run `bundle exec rspec` to run all tests.
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/deprecation_helper.
+Bug reports and pull requests are welcome on GitHub at https://github.com/Gusto/deprecation_helper.
