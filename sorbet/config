@@ -1,3 +1,2 @@
---dir
-.
+--dir=.
 --ignore=/vendor/bundle
