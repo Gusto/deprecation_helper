@@ -5,7 +5,7 @@ PATH
       sorbet-runtime (>= 0.5.6293)
 
 GEM
-  remote: https://rubygems.org/
+  remote: https://dl.cloudsmith.io/basic/gusto/gusto/ruby/
   specs:
     benchmark (0.4.1)
     diff-lcs (1.6.2)

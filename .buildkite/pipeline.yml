@@ -5,12 +5,16 @@ steps:
     env:
       BUILDKITE_DOCKER: 'true'
       BUILDKITE_DOCKER_FILE: 'Dockerfile.test'
+    plugins:
+      - ssh://git@github.com/Gusto/cloudsmith-auth-buildkite-plugin.git#v2.2.0: ~
   - name: ':sorbet: Sorbet typecheck'
     command: typecheck.sh
     timeout_in_minutes: 10
     env:
       BUILDKITE_DOCKER: 'true'
       BUILDKITE_DOCKER_FILE: 'Dockerfile.test'
+    plugins:
+      - ssh://git@github.com/Gusto/cloudsmith-auth-buildkite-plugin.git#v2.2.0: ~
   - wait
   - block: ':rocket: Publish to Gem Server?'
     branches: main
