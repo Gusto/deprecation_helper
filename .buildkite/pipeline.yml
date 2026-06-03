@@ -1,23 +1,49 @@
 steps:
+  - name: ':docker: Build test image'
+    key: build
+    plugins:
+      - ssh://git@github.com/Gusto/cloudsmith-auth-buildkite-plugin.git#v2.2.0: ~
+      - docker-compose#v5.4.1:
+          build: app
+          config: .buildkite/docker-compose.yml
+          env:
+            - BUNDLE_DL__CLOUDSMITH__IO
+            - CLOUDSMITH_API_KEY
+    timeout_in_minutes: 10
+
+  - wait
+
   - name: ':rspec: RSpec'
     command: test.sh
     timeout_in_minutes: 10
-    env:
-      BUILDKITE_DOCKER: 'true'
-      BUILDKITE_DOCKER_FILE: 'Dockerfile.test'
+    depends_on: build
     plugins:
       - ssh://git@github.com/Gusto/cloudsmith-auth-buildkite-plugin.git#v2.2.0: ~
+      - docker-compose#v5.4.1:
+          run: app
+          config: .buildkite/docker-compose.yml
+          env:
+            - BUNDLE_DL__CLOUDSMITH__IO
+            - CLOUDSMITH_API_KEY
+
   - name: ':sorbet: Sorbet typecheck'
     command: typecheck.sh
     timeout_in_minutes: 10
-    env:
-      BUILDKITE_DOCKER: 'true'
-      BUILDKITE_DOCKER_FILE: 'Dockerfile.test'
+    depends_on: build
     plugins:
       - ssh://git@github.com/Gusto/cloudsmith-auth-buildkite-plugin.git#v2.2.0: ~
+      - docker-compose#v5.4.1:
+          run: app
+          config: .buildkite/docker-compose.yml
+          env:
+            - BUNDLE_DL__CLOUDSMITH__IO
+            - CLOUDSMITH_API_KEY
+
   - wait
+
   - block: ':rocket: Publish to Gem Server?'
     branches: main
+
   - name: ':ruby: Publish to Rubygems'
     branches: main
     agents:
