@@ -14,7 +14,7 @@ steps:
   - wait
 
   - name: ':rspec: RSpec'
-    command: test.sh
+    command: ./test.sh
     timeout_in_minutes: 10
     depends_on: build
     plugins:
@@ -27,7 +27,7 @@ steps:
             - CLOUDSMITH_API_KEY
 
   - name: ':sorbet: Sorbet typecheck'
-    command: typecheck.sh
+    command: ./typecheck.sh
     timeout_in_minutes: 10
     depends_on: build
     plugins:
