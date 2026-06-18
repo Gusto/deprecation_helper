@@ -1,0 +1,14 @@
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: Dockerfile.test
+      secrets:
+        - cloudsmith_api_key
+    environment:
+      - CLOUDSMITH_API_KEY
+      - BUNDLE_DL__CLOUDSMITH__IO
+
+secrets:
+  cloudsmith_api_key:
+    environment: CLOUDSMITH_API_KEY
