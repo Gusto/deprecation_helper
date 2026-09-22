@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: deprecation_helper
+  description: This is a simple, low-dependency gem for managing deprecations.
+  annotations:
+    github.com/project-slug: gusto/deprecation_helper
+    buildkite.com/project-slug: gusto/deprecationhelper
+spec:
+  type: library
+  owner: team-developer-productivity-rails
+  lifecycle: stable

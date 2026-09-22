@@ -5,7 +5,7 @@ PATH
       sorbet-runtime (>= 0.5.6293)
 
 GEM
-  remote: https://rubygems.org/
+  remote: https://dl.cloudsmith.io/basic/gusto/gusto/ruby/
   specs:
     ast (2.4.3)
     coderay (1.1.3)
